@@ -1,4 +1,4 @@
-# my-skills
+# powerups
 
 > 个人使用的 Agent Skills 集合 —— 通过结构化引导，帮助你把模糊的想法变成可执行的书面规划。
 
@@ -8,7 +8,7 @@
 
 ## 简介
 
-`my-skills` 是一组个人定制的 agent skills。每个 skill 都是一份 `SKILL.md` 指南，告诉 AI 代理在特定场景下如何引导你完成高质量的工作。
+`powerups` 是一组个人定制的 agent skills。每个 skill 都是一份 `SKILL.md` 指南，告诉 AI 代理在特定场景下如何引导你完成高质量的工作。
 
 **核心原则：不写下来的规划等于没有规划。** 每一步讨论的结论都要落到文档里，而不是停留在对话中。
 
@@ -37,7 +37,7 @@
 本仓库是一个 [pi package](https://pi.dev/packages)，可以用 pi 的包管理器直接安装，无需手动克隆或复制：
 
 ```bash
-pi install git:github.com/Richeir/my-skills
+pi install git:github.com/Richeir/powerups
 ```
 
 当任务命中触发条件时，pi 会按需加载 `project-manager` skill。

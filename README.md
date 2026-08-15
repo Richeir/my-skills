@@ -1,4 +1,4 @@
-# my-skills
+# powerups
 
 > A collection of personal agent skills — guided, structured workflows that turn vague ideas into executable written plans.
 
@@ -8,7 +8,7 @@
 
 ## Introduction
 
-`my-skills` is a collection of personal, custom-made agent skills. Each skill is a `SKILL.md` guide that tells an AI agent how to guide you through high-quality work in a specific scenario.
+`powerups` is a collection of personal, custom-made agent skills. Each skill is a `SKILL.md` guide that tells an AI agent how to guide you through high-quality work in a specific scenario.
 
 **Core principle: a plan that isn't written down is no plan at all.** Every conclusion from the discussion must land in the document, not stay in the conversation.
 
@@ -37,7 +37,7 @@ Once installed, the agent automatically loads and uses a skill when a task match
 This repo is a [pi package](https://pi.dev/packages), so you can install it directly with pi's package manager — no manual cloning or copying:
 
 ```bash
-pi install git:github.com/Richeir/my-skills
+pi install git:github.com/Richeir/powerups
 ```
 
 Pi loads the `project-manager` skill on demand when a task matches its trigger conditions.
