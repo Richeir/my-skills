@@ -30,7 +30,7 @@
 pi install git:github.com/Richeir/powerups
 ```
 
-当任务命中触发条件时，skill 会被按需加载。`commit-conventions` 会在任何会产生 git 提交的工作中作为项目级约定加载。
+当任务命中触发条件时，skill 会被按需加载。`commit-conventions` 会在任何会产生 git 提交的工作中作为项目级约定加载；`nestjs-conventions` 在 NestJS 项目中使用；`pre-commit-checklist` 在提交或标记完成前加载。
 
 > **安全提示：** skill 可以指示模型执行任何操作，使用前请先检查内容。
 
