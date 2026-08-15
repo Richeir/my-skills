@@ -30,80 +30,19 @@
 
 ## 使用方式
 
-安装后，当任务命中某个 skill 的触发条件时，代理会自动加载并使用它。不同 agent 有各自的 skill 目录（见下）。
+安装后，当任务命中某个 skill 的触发条件时，代理会自动加载并使用它。
 
 ## 安装
 
-克隆仓库，然后把 skill 复制到对应 agent 的目录：
-
-```bash
-git clone git@github.com:Richeir/my-skills.git
-cd my-skills
-```
-
-> Claude Code 和 Codex 没有像 pi 的 `pi install` 那样的包管理器，所以我们用**稀疏克隆（sparse clone）**只拉取 `project-manager/` 目录——无需下载整个仓库。
-
-### Claude Code
-
-推荐方式：
-
-```bash
-git clone --depth 1 --filter=blob:none --sparse \
-    git@github.com:Richeir/my-skills.git /tmp/my-skills \
-  && cd /tmp/my-skills \
-  && git sparse-checkout set project-manager \
-  && mkdir -p ~/.claude/skills \
-  && cp -r project-manager ~/.claude/skills/ \
-  && cd ~ && rm -rf /tmp/my-skills
-```
-
-或者从已有的克隆里手动复制：
-
-```bash
-mkdir -p ~/.claude/skills
-cp -r project-manager ~/.claude/skills/
-```
-
-### Codex（OpenAI）
-
-推荐方式：
-
-```bash
-git clone --depth 1 --filter=blob:none --sparse \
-    git@github.com:Richeir/my-skills.git /tmp/my-skills \
-  && cd /tmp/my-skills \
-  && git sparse-checkout set project-manager \
-  && mkdir -p ~/.codex/skills \
-  && cp -r project-manager ~/.codex/skills/ \
-  && cd ~ && rm -rf /tmp/my-skills
-```
-
-或者使用跨运行时别名 `~/.agents/skills/`：
-
-```bash
-mkdir -p ~/.agents/skills
-cp -r project-manager ~/.agents/skills/
-```
-
-### pi
-
-推荐方式 —— 作为 pi package 一行安装：
+本仓库是一个 [pi package](https://pi.dev/packages)，可以用 pi 的包管理器直接安装，无需手动克隆或复制：
 
 ```bash
 pi install git:github.com/Richeir/my-skills
 ```
 
-或者，如果想手动复制：
+当任务命中触发条件时，pi 会按需加载 `project-manager` skill。
 
-```bash
-mkdir -p ~/.pi/agent/skills
-cp -r project-manager ~/.pi/agent/skills/
-# 或使用跨运行时别名：
-mkdir -p ~/.agents/skills
-cp -r project-manager ~/.agents/skills/
-```
-
-> **提示：** `~/.agents/skills/` 是被多个运行时共同识别的跨运行时别名。想一次装到多个 agent，只需复制到该目录一次。
+> **提示：** 如果想手动复制，skill 位于 `project-manager/` 目录，把它放到 `~/.pi/agent/skills/`（或跨运行时别名 `~/.agents/skills/`）下即可。
 
 > **安全提示：** skill 可以指示模型执行任何操作，使用前请先检查内容。
 
