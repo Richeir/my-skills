@@ -30,21 +30,47 @@ Upfront planning for **coding/development projects**. A 5-phase guided conversat
 
 ## Usage
 
-Point your agent's skills search path at this repo (or the individual skill directory you need). Common locations:
-
-- `~/.claude/skills/`
-- `~/.agents/skills/`
-- or a custom directory configured by your agent runtime
-
-Once configured, the agent automatically loads and uses a skill when a task matches its trigger conditions.
+Once installed, the agent automatically loads and uses a skill when a task matches its trigger conditions. Each agent looks for skills in its own directory (see below).
 
 ## Installation
 
+Clone the repo, then copy the skill into the directory for your agent runtime:
+
 ```bash
 git clone git@github.com:Richeir/my-skills.git
-# copy the skill directory you need into your skills path
-cp -r my-skills/project-manager ~/.claude/skills/
+cd my-skills
 ```
+
+### Claude Code
+
+```bash
+mkdir -p ~/.claude/skills
+cp -r project-manager ~/.claude/skills/
+```
+
+### Codex (OpenAI)
+
+```bash
+mkdir -p ~/.codex/skills
+cp -r project-manager ~/.codex/skills/
+# or the cross-runtime alias:
+mkdir -p ~/.agents/skills
+cp -r project-manager ~/.agents/skills/
+```
+
+### pi
+
+```bash
+mkdir -p ~/.pi/agent/skills
+cp -r project-manager ~/.pi/agent/skills/
+# or the cross-runtime alias:
+mkdir -p ~/.agents/skills
+cp -r project-manager ~/.agents/skills/
+```
+
+> **Note:** `~/.agents/skills/` is a cross-runtime alias recognized by several harnesses. To install for multiple agents at once, just copy the skill there once.
+
+> **Security:** skills can instruct the model to perform any action. Review the content before use.
 
 ## Contributing
 
