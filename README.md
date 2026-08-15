@@ -41,7 +41,23 @@ git clone git@github.com:Richeir/my-skills.git
 cd my-skills
 ```
 
+> Claude Code and Codex don't have a package installer like pi's `pi install`, so we use a **sparse clone** that fetches only the `project-manager/` directory — no full-repo download.
+
 ### Claude Code
+
+Recommended:
+
+```bash
+git clone --depth 1 --filter=blob:none --sparse \
+    git@github.com:Richeir/my-skills.git /tmp/my-skills \
+  && cd /tmp/my-skills \
+  && git sparse-checkout set project-manager \
+  && mkdir -p ~/.claude/skills \
+  && cp -r project-manager ~/.claude/skills/ \
+  && cd ~ && rm -rf /tmp/my-skills
+```
+
+Or copy manually from an existing clone:
 
 ```bash
 mkdir -p ~/.claude/skills
@@ -50,10 +66,21 @@ cp -r project-manager ~/.claude/skills/
 
 ### Codex (OpenAI)
 
+Recommended:
+
 ```bash
-mkdir -p ~/.codex/skills
-cp -r project-manager ~/.codex/skills/
-# or the cross-runtime alias:
+git clone --depth 1 --filter=blob:none --sparse \
+    git@github.com:Richeir/my-skills.git /tmp/my-skills \
+  && cd /tmp/my-skills \
+  && git sparse-checkout set project-manager \
+  && mkdir -p ~/.codex/skills \
+  && cp -r project-manager ~/.codex/skills/ \
+  && cd ~ && rm -rf /tmp/my-skills
+```
+
+Or use the cross-runtime alias `~/.agents/skills/`:
+
+```bash
 mkdir -p ~/.agents/skills
 cp -r project-manager ~/.agents/skills/
 ```

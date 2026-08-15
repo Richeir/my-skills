@@ -41,7 +41,23 @@ git clone git@github.com:Richeir/my-skills.git
 cd my-skills
 ```
 
+> Claude Code 和 Codex 没有像 pi 的 `pi install` 那样的包管理器，所以我们用**稀疏克隆（sparse clone）**只拉取 `project-manager/` 目录——无需下载整个仓库。
+
 ### Claude Code
+
+推荐方式：
+
+```bash
+git clone --depth 1 --filter=blob:none --sparse \
+    git@github.com:Richeir/my-skills.git /tmp/my-skills \
+  && cd /tmp/my-skills \
+  && git sparse-checkout set project-manager \
+  && mkdir -p ~/.claude/skills \
+  && cp -r project-manager ~/.claude/skills/ \
+  && cd ~ && rm -rf /tmp/my-skills
+```
+
+或者从已有的克隆里手动复制：
 
 ```bash
 mkdir -p ~/.claude/skills
@@ -50,10 +66,21 @@ cp -r project-manager ~/.claude/skills/
 
 ### Codex（OpenAI）
 
+推荐方式：
+
 ```bash
-mkdir -p ~/.codex/skills
-cp -r project-manager ~/.codex/skills/
-# 或使用跨运行时别名：
+git clone --depth 1 --filter=blob:none --sparse \
+    git@github.com:Richeir/my-skills.git /tmp/my-skills \
+  && cd /tmp/my-skills \
+  && git sparse-checkout set project-manager \
+  && mkdir -p ~/.codex/skills \
+  && cp -r project-manager ~/.codex/skills/ \
+  && cd ~ && rm -rf /tmp/my-skills
+```
+
+或者使用跨运行时别名 `~/.agents/skills/`：
+
+```bash
 mkdir -p ~/.agents/skills
 cp -r project-manager ~/.agents/skills/
 ```
