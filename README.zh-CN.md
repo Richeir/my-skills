@@ -14,19 +14,9 @@
 
 ## 已收录的 Skills
 
-### [`project-manager`](./project-manager/SKILL.zh-CN.md)
+### [`commit-conventions`](./commit-conventions/SKILL.zh-CN.md)
 
-用于**编程/开发项目**的前期规划。通过 5 阶段的对话式引导，把模糊的编程想法变成结构化、写下来的规划：
-
-| 阶段 | 内容 |
-|------|------|
-| 1 | 明确目标与验收标准 |
-| 2 | 确定技术约束与选型 |
-| 3 | 模块与任务拆解（含依赖） |
-| 4 | 优先级排序与 MVP 核心路径 |
-| 5 | 收敛成一份简洁的 `project-plan.md` |
-
-> 适用场景：开始新开发项目、想法模糊、易遗漏细节、经常返工、想要书面计划再开工。
+规定每次 git 提交都必须遵循 **Angular / Conventional Commits** 格式：`<type>(<scope>): <subject>`，包含固定的 `type` 集合、小写祈使句英文 subject（≤ 50 字符）以及结构化 body（每行 ≤ 72 字符、`BREAKING CHANGE:` 标注）。
 
 ## 使用方式
 
@@ -40,9 +30,7 @@
 pi install git:github.com/Richeir/powerups
 ```
 
-当任务命中触发条件时，pi 会按需加载 `project-manager` skill。
-
-> **提示：** 如果想手动复制，skill 位于 `project-manager/` 目录，把它放到 `~/.pi/agent/skills/`（或跨运行时别名 `~/.agents/skills/`）下即可。
+当任务命中触发条件时，skill 会被按需加载。`commit-conventions` 会在任何会产生 git 提交的工作中作为项目级约定加载。
 
 > **安全提示：** skill 可以指示模型执行任何操作，使用前请先检查内容。
 

@@ -14,19 +14,9 @@
 
 ## Included Skills
 
-### [`project-manager`](./project-manager/SKILL.md)
+### [`commit-conventions`](./commit-conventions/SKILL.md)
 
-Upfront planning for **coding/development projects**. A 5-phase guided conversation turns a vague coding idea into a structured, written plan:
-
-| Phase | Content |
-|-------|---------|
-| 1 | Clarify goals & acceptance criteria |
-| 2 | Settle technical constraints & stack |
-| 3 | Module & task breakdown (with dependencies) |
-| 4 | Prioritization & MVP core path |
-| 5 | Converge into a concise `project-plan.md` |
-
-> Good fits: starting a new dev project, vague ideas, easily missed details, frequent rework, or wanting a written plan before starting.
+Enforces the **Angular / Conventional Commits** format on every git commit: `<type>(<scope>): <subject>` with a defined `type` set, lowercase imperative English subjects (≤ 50 chars), and structured bodies (≤ 72 chars, `BREAKING CHANGE:` markers).
 
 ## Usage
 
@@ -40,9 +30,7 @@ This repo is a [pi package](https://pi.dev/packages), so you can install it dire
 pi install git:github.com/Richeir/powerups
 ```
 
-Pi loads the `project-manager` skill on demand when a task matches its trigger conditions.
-
-> **Note:** If you prefer to copy manually, the skill lives in the `project-manager/` directory; place it under `~/.pi/agent/skills/` (or the cross-runtime alias `~/.agents/skills/`).
+Skills are loaded on demand when a task matches their trigger conditions. `commit-conventions` loads as a project-level convention whenever work produces a git commit.
 
 > **Security:** skills can instruct the model to perform any action. Review the content before use.
 
