@@ -60,6 +60,14 @@ cp -r project-manager ~/.agents/skills/
 
 ### pi
 
+Recommended — install as a pi package:
+
+```bash
+pi install git:github.com/Richeir/my-skills
+```
+
+Or, if you prefer to copy manually:
+
 ```bash
 mkdir -p ~/.pi/agent/skills
 cp -r project-manager ~/.pi/agent/skills/

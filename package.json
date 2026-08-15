@@ -1,0 +1,11 @@
+{
+  "name": "my-skills",
+  "version": "0.1.0",
+  "description": "Personal agent skills, including project-manager for structured coding project planning.",
+  "license": "MIT",
+  "author": "Richeir",
+  "keywords": ["pi-package", "skills", "agent-skills", "project-manager"],
+  "pi": {
+    "skills": ["./project-manager"]
+  }
+}

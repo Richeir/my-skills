@@ -60,6 +60,14 @@ cp -r project-manager ~/.agents/skills/
 
 ### pi
 
+推荐方式 —— 作为 pi package 一行安装：
+
+```bash
+pi install git:github.com/Richeir/my-skills
+```
+
+或者，如果想手动复制：
+
 ```bash
 mkdir -p ~/.pi/agent/skills
 cp -r project-manager ~/.pi/agent/skills/
