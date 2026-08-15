@@ -3,78 +3,80 @@ name: project-manager
 description: Use when starting a new coding/development project and needing to plan it before writing code — when the idea is vague, when details are easily missed and cause rework, or when you want a written plan before coding.
 ---
 
-# 项目经理（Project Manager）
+# Project Manager
+
+> **Languages:** [English](SKILL.md) | [中文](SKILL.zh-CN.md)
 
 ## Overview
 
-把模糊的编程想法变成**结构化、写下来**的规划：先明确目标和验收标准，再定技术方案，拆成可执行任务，排好优先级与 MVP 核心路径，最后收敛成一份简洁的 `project-plan.md`。
+Turns a vague coding idea into a **structured, written-down** plan: first clarify goals and acceptance criteria, then settle the technical approach, break the work into executable tasks, prioritize with a clear MVP core path, and finally converge on a concise `project-plan.md`.
 
-**核心原则：不写下来的规划等于没有规划。** 每一步讨论的结论都要落到文档里，而不是停留在对话中。
+**Core principle: a plan that isn't written down is no plan at all.** Every conclusion from the discussion must land in the document, not stay in the conversation.
 
 ## When to Use
 
-用在**动手写代码之前**的一次性前期规划。适用场景：
-- 开始一个全新开发项目
-- 想法还很模糊，不知道从哪下手
-- 容易遗漏细节、经常返工
-- 想要一份书面计划再开工
+Use for one-time **upfront planning before writing code**. Good fits:
+- Starting a brand-new development project
+- The idea is still vague and you don't know where to start
+- Details are easily missed and rework is common
+- You want a written plan before starting
 
-**不要用**在开发中途的动态进度管理、或已经写完的代码上。
+**Do not use** for mid-development progress tracking or on code that's already written.
 
-## Core Pattern：5 阶段引导对话
+## Core Pattern: 5-Phase Guided Conversation
 
-按顺序走完 5 个阶段，每阶段用提问引导对方明确说出想法，**并把结论记录/确认下来**，不要停留在脑子里。一个阶段没走完别跳到下一个。
+Walk through the 5 phases in order. In each phase, use questions to make the other party say their thinking out loud, **and record/confirm the conclusion** rather than leaving it in their head. Don't jump to the next phase before finishing the current one.
 
-| # | 阶段 | 要明确的问题 |
-|---|------|--------------|
-| 1 | 目标与验收标准 | 做成什么样算成功？核心需求？有哪些"必须能……"？ |
-| 2 | 技术约束与选型 | 现有技术栈？环境/平台约束？语言框架倾向？要不要持久化/联网/第三方依赖？ |
-| 3 | 模块与任务拆解 | 分哪些模块？每个模块拆成哪些可执行任务？任务间的依赖关系？ |
-| 4 | 优先级与 MVP | 哪些是核心必做路径？哪些可后置？哪些可砍？ |
-| 5 | 收敛成文档 | 把 1-4 的结论整理成 `project-plan.md`。 |
+| # | Phase | Questions to resolve |
+|---|-------|----------------------|
+| 1 | Goals & acceptance criteria | What does success look like? Core requirements? What "must be able to…"? |
+| 2 | Technical constraints & stack | Existing tech stack? Platform/environment constraints? Language/framework preference? Need persistence/network/third-party deps? |
+| 3 | Module & task breakdown | Which modules? Which executable tasks per module? Dependencies between tasks? |
+| 4 | Prioritization & MVP | Which path is core and must-do? What can be postponed? What can be cut? |
+| 5 | Converge into a document | Assemble phases 1-4 into `project-plan.md`. |
 
-**提问要点**：
-- 一次问一个关键问题，等对方答完再问下一个。
-- 发现含糊/没定义清楚的地方（如"处理各种错误"），追问具体范围。
-- 每个阶段结束，用一两句话复述确认，再进入下一阶段。
+**Questioning tips**:
+- Ask one key question at a time; wait for the answer before the next.
+- When something is vague or undefined (e.g. "handle all errors"), ask for the concrete scope.
+- After each phase, restate the conclusion in a line or two to confirm before moving on.
 
-## Quick Reference（产出文档结构）
+## Quick Reference (Output Structure)
 
-对话收敛后生成 `project-plan.md`，简洁、一屏能扫完：
+Generate a concise `project-plan.md` that fits on one screen:
 
 ```markdown
-# <项目名>
-## 目标与验收标准
-- 做成什么样算成功
-- 核心需求列表
-## 技术方案
-- 技术栈 / 约束 / 模块划分 / 数据流
-## 任务清单
-- [ ] 任务一（优先级：P0｜依赖：无）每个任务一行
-- [ ] 任务二（优先级：P1｜依赖：任务一）
-## 优先级与 MVP 核心路径
-- 必做（核心路径）／可后置／可砍
+# <Project Name>
+## Goals & Acceptance Criteria
+- what success looks like
+- core requirements
+## Technical Approach
+- stack / constraints / module layout / data flow
+## Task List
+- [ ] task one (priority: P0 | depends on: none) one task per line
+- [ ] task two (priority: P1 | depends on: task one)
+## Prioritization & MVP Core Path
+- must-do (core path) / can postpone / can cut
 ```
 
-任务**一行一个**，标注优先级和依赖。文档默认存项目根目录，或询问对方放哪。
+One **task per line**, each tagged with priority and dependencies. Save the file at the project root by default, or ask where to put it.
 
 ## Common Mistakes
 
-| 错误 | 修正 |
-|------|------|
-| 直接列功能就开干，没定验收标准 | 先走阶段 1，明确"成功长什么样" |
-| 假设技术栈，不问约束 | 阶段 2 必须确认 |
-| 任务没标依赖关系 | 阶段 3 每个任务标注依赖 |
-| 所有需求混在一起，不分优先级 | 阶段 4 明确 MVP 核心路径 vs 可砍项 |
-| 讨论完不落文档 | 阶段 5 必生成 `project-plan.md` |
-| 一次抛多个问题 | 一次只问一个 |
+| Mistake | Fix |
+|---------|-----|
+| Listing features and starting right away, no acceptance criteria | Do phase 1 first; define what "done" looks like |
+| Assuming a tech stack without asking about constraints | Must confirm in phase 2 |
+| Tasks without dependencies | Tag each task's dependencies in phase 3 |
+| Mixing all requirements together, no priorities | In phase 4, separate MVP core path from cuttable items |
+| Ending the discussion without a document | Phase 5 must produce `project-plan.md` |
+| Asking many questions at once | Ask one at a time |
 
-## Red Flags —— 走偏信号
+## Red Flags — Signals You've Gone Off Track
 
-- 没产出验收标准就直接列功能
-- 跳过技术约束直接假设方案
-- 任务清单没有优先级或依赖
-- 对话结束但没有 `project-plan.md`
-- "先记在脑子里，待会再写"
+- Listing features with no acceptance criteria
+- Skipping technical constraints and just assuming a solution
+- Task list without priorities or dependencies
+- Conversation ends with no `project-plan.md`
+- "I'll keep it in my head and write it down later"
 
-**以上任意一条出现 = 停下，回到对应阶段补全。**
+**If any of these appear = stop and go back to the corresponding phase to fill the gap.**
