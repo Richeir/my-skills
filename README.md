@@ -34,41 +34,15 @@ Once installed, the agent automatically loads and uses a skill when a task match
 
 ## Installation
 
-Clone the repo, then copy the skill into the directory for your agent runtime:
+This repo is a [pi package](https://pi.dev/packages), so you can install it directly with pi's package manager — no manual cloning or copying:
 
 ```bash
-git clone git@github.com:Richeir/my-skills.git
-cd my-skills
+pi install git:github.com/Richeir/my-skills
 ```
 
-### Claude Code
+Pi loads the `project-manager` skill on demand when a task matches its trigger conditions.
 
-```bash
-mkdir -p ~/.claude/skills
-cp -r project-manager ~/.claude/skills/
-```
-
-### Codex (OpenAI)
-
-```bash
-mkdir -p ~/.codex/skills
-cp -r project-manager ~/.codex/skills/
-# or the cross-runtime alias:
-mkdir -p ~/.agents/skills
-cp -r project-manager ~/.agents/skills/
-```
-
-### pi
-
-```bash
-mkdir -p ~/.pi/agent/skills
-cp -r project-manager ~/.pi/agent/skills/
-# or the cross-runtime alias:
-mkdir -p ~/.agents/skills
-cp -r project-manager ~/.agents/skills/
-```
-
-> **Note:** `~/.agents/skills/` is a cross-runtime alias recognized by several harnesses. To install for multiple agents at once, just copy the skill there once.
+> **Note:** If you prefer to copy manually, the skill lives in the `project-manager/` directory; place it under `~/.pi/agent/skills/` (or the cross-runtime alias `~/.agents/skills/`).
 
 > **Security:** skills can instruct the model to perform any action. Review the content before use.
 
