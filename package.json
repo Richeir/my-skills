@@ -1,11 +1,11 @@
 {
   "name": "powerups",
   "version": "0.1.0",
-  "description": "Personal agent skills, including project-manager for structured coding project planning.",
+  "description": "Personal agent skills.",
   "license": "MIT",
   "author": "Richeir",
-  "keywords": ["pi-package", "skills", "agent-skills", "project-manager"],
+  "keywords": ["pi-package", "skills", "agent-skills", "commit-conventions"],
   "pi": {
-    "skills": ["./project-manager"]
+    "skills": ["./commit-conventions"]
   }
 }
