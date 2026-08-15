@@ -30,7 +30,7 @@ This repo is a [pi package](https://pi.dev/packages), so you can install it dire
 pi install git:github.com/Richeir/powerups
 ```
 
-Skills are loaded on demand when a task matches their trigger conditions. `commit-conventions` loads as a project-level convention whenever work produces a git commit.
+Skills are loaded on demand when a task matches their trigger conditions. `commit-conventions` loads as a project-level convention whenever work produces a git commit; `nestjs-conventions` loads when working in a NestJS project; `pre-commit-checklist` loads before committing or marking work complete.
 
 > **Security:** skills can instruct the model to perform any action. Review the content before use.
 

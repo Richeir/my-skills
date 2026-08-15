@@ -4,8 +4,8 @@
   "description": "Personal agent skills.",
   "license": "MIT",
   "author": "Richeir",
-  "keywords": ["pi-package", "skills", "agent-skills", "commit-conventions"],
+  "keywords": ["pi-package", "skills", "agent-skills", "commit-conventions", "nestjs-conventions", "pre-commit-checklist"],
   "pi": {
-    "skills": ["./commit-conventions"]
+    "skills": ["./commit-conventions", "./nestjs-conventions", "./pre-commit-checklist"]
   }
 }
